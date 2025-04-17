@@ -39,7 +39,7 @@
   hardware.bluetooth.enable = true;
 
   # enable Hyprland
-  programs.hyprland.enable = true;
+  #programs.hyprland.enable = true;
 
   #Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -131,6 +131,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.mutableUsers = false; 
+  #this will make all user management only via nixos and imperative user creations or 
+  #anything in kde or commands won't persist the nixos-rebuild command.
+
   users.users.root.hashedPassword = "$6$/Yo/IR.A6rGbFVr6$a6c7yhjPYGuJOBBkcPXl/SjZ531tEUHtkY3tX3np2dcX6JpZg.Myrwdnz.fhqci0Sg83vU8lDYmdpSAQqD.OF0" ;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ksvnixospc = {
@@ -160,7 +164,7 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "ksvnixpc";
+  services.displayManager.autoLogin.user = "ksvnixospc";
 
   # Install firefox.
   programs.firefox.enable = true;
